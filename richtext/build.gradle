@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
 
 def version_code = 65
 def version_name = "3.0.8"
@@ -35,18 +34,3 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
 
-publish {
-
-    Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-    userOrg = properties.getProperty("bintray.user")
-    bintrayUser=properties.getProperty("bintray.user")
-    bintrayKey=properties.getProperty("bintray.key")
-
-    groupId = "com.zzhoujay.richtext"
-    artifactId = 'richtext'
-    publishVersion = version_name
-    desc = 'Android端的富文本解析器'
-    website = 'https://github.com/zzhoujay/RichTex'
-
-}
